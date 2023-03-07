@@ -1,0 +1,22 @@
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+
+filegroup(
+    name = "api_documents",
+    srcs = [
+        "//api/model:doc_model",
+        "//api/service:doc_service",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+pkg_tar(
+    name = "api_documents_tar",
+    srcs = [
+        ":api_documents",
+    ],
+    extension = ".tgz",
+    remap_paths = {
+        "/doc_": "",
+    },
+    visibility = ["//docs:__subpackages__"],
+)

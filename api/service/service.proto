@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package bazel.go.template.service;
+
+import "api/model/model.proto";
+
+// A simple service to find an ID
+service Id {
+    rpc Put(bazel.go.template.model.IdRequest) returns (bazel.go.template.model.IdResponse) {};
+}

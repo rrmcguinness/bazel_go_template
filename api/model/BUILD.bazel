@@ -1,0 +1,24 @@
+
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@rules_proto_grpc//doc:defs.bzl", "doc_markdown_compile")
+load("//:build/go_deps.bzl", "COMMON_API_PROTOS")
+
+proto_library(
+    name = "model",
+    srcs = ["model.proto"],
+    visibility = [
+        "//api:__subpackages__",
+    ],
+    deps = COMMON_API_PROTOS,
+)
+
+doc_markdown_compile(
+    name = "doc_model",
+    output_mode = "NO_PREFIX",
+    visibility = [
+        "//api:__subpackages__",
+    ],
+    protos = [
+        ":model",
+    ],
+)

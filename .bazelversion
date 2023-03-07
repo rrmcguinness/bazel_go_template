@@ -1,0 +1,4 @@
+6.0.0
+
+# The bazelversion file is used by bazelisk to determine which version of
+# bazel to compile against.

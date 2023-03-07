@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package bazel.go.template.model;
+
+// A simple ID request
+message IdRequest {
+    string id = 1; // The ID to lookup
+}
+
+// An example ID response
+message IdResponse {
+    bool exists = 1; // True if the ID exists
+}
